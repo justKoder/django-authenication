@@ -1,0 +1,25 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+
+<body>
+    <div class="form__container">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="username" name="username">
+            <br>
+            <input type="password" placeholder="password" name="password">
+            <br>
+            <input type="password" placeholder="confirm passwork" name="password2">
+            <br>
+            <button type="submit" class="btn btn">Login</button>
+        </form>
+    </div>
+</body>
+
+</html>
