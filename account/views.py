@@ -17,6 +17,9 @@ def login_user(request):
         password1 = request.POST.get('password')
         password2 = request.POST.get('password2')
 
+        if password1 != password2:
+            return HttpResponse('<h1>Password mismatch</h1>')
+
         user = authenticate(request, username=username, password=password1)
         if user is not None:
             login(request, user)
@@ -34,6 +37,9 @@ def register_user(request):
         email = request.POST.get('email')
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
+
+        if password1 != password2:
+            return HttpResponse('<h1>Password mismatch</h1>')
 
         hashed_password = make_password(password1)
 
